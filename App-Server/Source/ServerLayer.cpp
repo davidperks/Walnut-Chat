@@ -403,6 +403,10 @@ void ServerLayer::OnCommand(std::string_view command)
 			m_Console.AddItalicMessage("Kick command requires single argument, eg. /kick <username>");
 		}
 	}
+	if (tokens[0] == "kill")
+	{
+		Quit();
+	}
 }
 
 void ServerLayer::SaveMessageHistoryToFile(const std::filesystem::path& filepath)
